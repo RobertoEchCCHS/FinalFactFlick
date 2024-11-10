@@ -1,0 +1,161 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Container Styling */
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Header Image */
+.header-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s forwards;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+/* Facts Section */
+.facts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Fact Styling */
+.fact {
+    background-color: #f9fafb;
+    border-left: 5px solid #3498db;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.8s forwards;
+}
+
+.fact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Fact Image Styling */
+.fact-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Fact Text */
+.fact p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.dark-mode .container {
+    background-color: #34495e;
+}
+
+.dark-mode .fact {
+    background-color: #3d566e;
+    border-left: 5px solid #e74c3c;
+}
+
+.dark-mode .fact p {
+    color: #bdc3c7;
+}
+
+/* Toggle Dark Mode on Hover */
+.container:hover {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.container:hover .fact {
+    background-color: #3d566e;
+    border-left-color: #e74c3c;
+}
+
+.container:hover .fact p {
+    color: #bdc3c7;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Individual Fact Animation Delays */
+.fact:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.fact:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.fact:nth-child(3) {
+    animation-delay: 1s;
+}
